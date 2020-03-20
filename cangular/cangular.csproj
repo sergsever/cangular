@@ -1,0 +1,126 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <SpaRoot>client</SpaRoot>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Remove="$(SpaRoot)**" />
+    <None Remove="$(SpaRoot)**" />
+    <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="client\.editorconfig" />
+    <Content Include="client\.gitignore" />
+    <Content Include="client\browserslist" />
+    <Content Include="client\dist\client\favicon.ico" />
+    <Content Include="client\dist\client\index.html" />
+    <Content Include="client\dist\client\main-es2015.js" />
+    <Content Include="client\dist\client\main-es2015.js.map" />
+    <Content Include="client\dist\client\main-es5.js" />
+    <Content Include="client\dist\client\main-es5.js.map" />
+    <Content Include="client\dist\client\polyfills-es2015.js" />
+    <Content Include="client\dist\client\polyfills-es2015.js.map" />
+    <Content Include="client\dist\client\polyfills-es5.js" />
+    <Content Include="client\dist\client\polyfills-es5.js.map" />
+    <Content Include="client\dist\client\runtime-es2015.js" />
+    <Content Include="client\dist\client\runtime-es2015.js.map" />
+    <Content Include="client\dist\client\runtime-es5.js" />
+    <Content Include="client\dist\client\runtime-es5.js.map" />
+    <Content Include="client\dist\client\styles-es2015.js" />
+    <Content Include="client\dist\client\styles-es2015.js.map" />
+    <Content Include="client\dist\client\styles-es5.js" />
+    <Content Include="client\dist\client\styles-es5.js.map" />
+    <Content Include="client\dist\client\vendor-es2015.js" />
+    <Content Include="client\dist\client\vendor-es2015.js.map" />
+    <Content Include="client\dist\client\vendor-es5.js" />
+    <Content Include="client\dist\client\vendor-es5.js.map" />
+    <Content Include="client\dist\out-tsc\e2e\src\app.e2e-spec.js" />
+    <Content Include="client\dist\out-tsc\e2e\src\app.e2e-spec.js.map" />
+    <Content Include="client\dist\out-tsc\e2e\src\app.po.js" />
+    <Content Include="client\dist\out-tsc\e2e\src\app.po.js.map" />
+    <Content Include="client\dist\out-tsc\src\app\app-routing.module.js" />
+    <Content Include="client\dist\out-tsc\src\app\app-routing.module.js.map" />
+    <Content Include="client\dist\out-tsc\src\app\app.component.js" />
+    <Content Include="client\dist\out-tsc\src\app\app.component.js.map" />
+    <Content Include="client\dist\out-tsc\src\app\app.component.spec.js" />
+    <Content Include="client\dist\out-tsc\src\app\app.component.spec.js.map" />
+    <Content Include="client\dist\out-tsc\src\app\app.module.js" />
+    <Content Include="client\dist\out-tsc\src\app\app.module.js.map" />
+    <Content Include="client\dist\out-tsc\src\environments\environment.js" />
+    <Content Include="client\dist\out-tsc\src\environments\environment.js.map" />
+    <Content Include="client\dist\out-tsc\src\environments\environment.prod.js" />
+    <Content Include="client\dist\out-tsc\src\environments\environment.prod.js.map" />
+    <Content Include="client\dist\out-tsc\src\main.js" />
+    <Content Include="client\dist\out-tsc\src\main.js.map" />
+    <Content Include="client\dist\out-tsc\src\polyfills.js" />
+    <Content Include="client\dist\out-tsc\src\polyfills.js.map" />
+    <Content Include="client\dist\out-tsc\src\test.js" />
+    <Content Include="client\dist\out-tsc\src\test.js.map" />
+    <Content Include="client\e2e\protractor.conf.js" />
+    <Content Include="client\e2e\src\app.e2e-spec.ts" />
+    <Content Include="client\e2e\src\app.po.ts" />
+    <Content Include="client\karma.conf.js" />
+    <Content Include="client\out-tsc\e2e\app.e2e-spec.js" />
+    <Content Include="client\out-tsc\e2e\app.e2e-spec.js.map" />
+    <Content Include="client\out-tsc\e2e\app.po.js" />
+    <Content Include="client\out-tsc\e2e\app.po.js.map" />
+    <Content Include="client\README.md" />
+    <Content Include="client\src\app\app-routing.module.ts" />
+    <Content Include="client\src\app\app.component.css" />
+    <Content Include="client\src\app\app.component.html" />
+    <Content Include="client\src\app\app.component.spec.ts" />
+    <Content Include="client\src\app\app.component.ts" />
+    <Content Include="client\src\app\app.module.ts" />
+    <Content Include="client\src\assets\.gitkeep" />
+    <Content Include="client\src\environments\environment.prod.ts" />
+    <Content Include="client\src\environments\environment.ts" />
+    <Content Include="client\src\favicon.ico" />
+    <Content Include="client\src\index.html" />
+    <Content Include="client\src\main.ts" />
+    <Content Include="client\src\polyfills.ts" />
+    <Content Include="client\src\styles.css" />
+    <Content Include="client\src\test.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="client\" />
+    <Folder Include="wwwroot\js\" />
+  </ItemGroup>
+  <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
+    <!-- Ensure Node.js is installed -->
+    <Exec Command="node --version" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+    </Exec>
+    <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
+    <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+  </Target>
+
+  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
+    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build -- --prod" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build:ssr -- --prod" Condition=" '$(BuildServerSideRenderer)' == 'true' " />
+
+    <!-- Include the newly-built files in the publish output -->
+    <ItemGroup>
+      <DistFiles Include="$(SpaRoot)dist\**; $(SpaRoot)dist-server\**" />
+      <DistFiles Include="$(SpaRoot)node_modules\**" Condition="'$(BuildServerSideRenderer)' == 'true'" />
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>%(DistFiles.Identity)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+
+</Project>
