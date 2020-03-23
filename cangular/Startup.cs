@@ -62,31 +62,18 @@ namespace cangular
 				if (env.IsDevelopment())
 				{
 					spa.UseAngularCliServer(npmScript: "start");
-//					spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");
 				}
 
 
 			});
 			app.UseStaticFiles();
 			app.UseSpaStaticFiles();
-			app.UseMvc(routes =>
-			{
-				routes.MapRoute(
-					name: "default",
-					template: "{controller}/{action=Index}/{id?}");
-			});
 
 
 		}
 
 	}
 }
-			/*
-						app.Run(async (context) =>
-						{
-							await context.Response.WriteAsync("Hello World!");
-						});
-			*/
 		
 	
 
