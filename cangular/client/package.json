@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ng serve",
+    "ng": "ng",
+    "start": " echo hello && ng serve",
     "build": "ng build",
     "build:ssr": "ng run angtmp:server:dev",
     "test": "ng test",

@@ -38,7 +38,6 @@ namespace cangular
 				configuration.RootPath = "client/dist";
 			});
 
-			services.AddNodeServices();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,12 +47,28 @@ namespace cangular
 			{
 				app.UseDeveloperExceptionPage();
 			}
+			else
+			{
+				app.UseExceptionHandler("/Home/Error");
+				app.UseHsts();
+			}
 
-			app.UseHsts();
 
+
+
+			app.UseSpa(spa =>
+			{
+				spa.Options.SourcePath = "client";
+				if (env.IsDevelopment())
+				{
+					spa.UseAngularCliServer(npmScript: "start");
+//					spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");
+				}
+
+
+			});
 			app.UseStaticFiles();
 			app.UseSpaStaticFiles();
-
 			app.UseMvc(routes =>
 			{
 				routes.MapRoute(
@@ -61,16 +76,7 @@ namespace cangular
 					template: "{controller}/{action=Index}/{id?}");
 			});
 
-			app.UseSpa(spa =>
-			{
-				spa.Options.SourcePath = "client";
-				if (env.IsDevelopment())
-				{
-					//					spa.UseAngularCliServer("start");
-					spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");
-				}
 
-			});
 		}
 
 	}

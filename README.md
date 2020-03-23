@@ -1,2 +1,2 @@
 # cangular
-asp.net core and angular
+## asp.net core spa and angular
